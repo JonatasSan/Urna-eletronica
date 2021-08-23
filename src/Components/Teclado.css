@@ -1,0 +1,36 @@
+.teclado{
+    background-color: #403A3A;
+    margin-left: 30px;
+}
+.num{
+    margin: 30px;
+}
+.botao{
+    width: 60px;
+    height: 40px;
+    margin: 10px;
+    background: black;
+    color: white;
+    border: 0;
+    font-size: 25px;
+    cursor: pointer;
+}
+.botao.confirma{
+    height: 50px;
+    width: 90px;
+    background: green;
+    color: black;
+    font-size: 15px;
+}
+.botao.corrige{
+    width: 80px;
+    background: rgb(255, 123, 0);
+    color: black;
+    font-size: 15px;
+}
+.botao.branco{
+    width: 80px;
+    background: white;
+    color: black;
+    font-size: 15px;
+}
