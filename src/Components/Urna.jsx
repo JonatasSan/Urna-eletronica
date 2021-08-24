@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './Urna.css'
+import '../Styles/Urna.css'
 
 import Tela from './Tela'
 import Teclado from './Teclado'

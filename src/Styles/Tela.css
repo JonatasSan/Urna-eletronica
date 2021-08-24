@@ -1,0 +1,83 @@
+@keyframes pisca{
+    0% {opacity: 0.2;}
+    50% {opacity: 1;}
+    100% {opacity: 0.2}
+}
+
+.tela{
+    background: linear-gradient(to right, #E8E8E8, #C1C1C1);
+    width: 500px;
+    height: 370px;
+    border: solid #555;
+    display: flex;
+    flex-direction: column;
+}
+.voto{
+    flex: 1;
+    display: flex
+}
+.direita{
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.avatar{
+    border: 1px solid #555;
+    background-color: white; 
+    text-align: center;
+    font-size: 14px;
+}
+.avatar img{
+    width: 100%;
+}
+.avatar.v{
+    width: 80%;
+    font-size: 12px;
+}
+.esquerda{
+    flex: 1;
+    display: flex;
+    flex-direction: column ;
+    margin-left: 10px;
+}
+.d-1{
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.d-2{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.d-3{
+    height: 50px;
+}
+.nume{
+    display: inline-block;
+    width: 30px;
+    height: 40px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 40px;
+    font-size: 25px;
+    margin-left: 3px;
+    border-radius: 3px;
+}
+.pisca{
+    animation-name: pisca;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+
+}
+.d-4{
+    flex: 1;
+    line-height: 30px;
+}
+.instrucao{
+    border-top:solid #555;
+    font-size: 14px;
+    padding-left: 10px;
+}
