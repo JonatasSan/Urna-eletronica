@@ -43,7 +43,7 @@ export const dados = [
             },
             {
                 numero: 45,
-                nome: 'Rogerio Manella',
+                nome: 'Jefferson Nutella',
                 partido: 'PSDB',
                 fotos: [
                     {url: 'https://avatars.githubusercontent.com/u/25174?v=4',

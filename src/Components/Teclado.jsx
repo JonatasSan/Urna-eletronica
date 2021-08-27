@@ -1,18 +1,19 @@
 import React from 'react'
 
 import '../Styles/Teclado.css'
-import Button from './Botoes'
 
-export default function Teclado() {
+export default props => {
 
-    // const addDigit = n => this.addDigit(n)
-    // const setOperation = op => this.setOperation(op)
-
+    function clicou(n) {
+        return (
+            alert(n)
+        ) 
+    }
     function branco() {
         alert("branco")
     }
     function confirma() {
-        alert("confirma")
+        props.setEtapaAtual(1);
     }
     function corrige() {
         alert("corrige")
@@ -22,28 +23,28 @@ export default function Teclado() {
         <div className="teclado">
             <div className="num">
                 <div>
-                    <Button class="botao" label="1" />
-                    <Button class="botao" label="2" />
-                    <Button class="botao" label="3" />
+                    <button className="botao" onClick={() =>clicou("1")}>1</button>
+                    <button className="botao" onClick={() =>clicou}>2</button>  
+                    <button className="botao" onClick={() =>clicou}>3</button>  
                 </div>
                 <div>
-                    <Button class="botao" label="4" />
-                    <Button class="botao" label="5" />
-                    <Button class="botao" label="6" />
+                    <button className="botao" onClick={() =>clicou}>4</button>  
+                    <button className="botao" onClick={() =>clicou}>5</button>  
+                    <button className="botao" onClick={() =>clicou}>6</button>  
                 </div>
                 <div>
-                    <Button class="botao" label="7" />
-                    <Button class="botao" label="8" />
-                    <Button class="botao" label="9" />
+                    <button className="botao" onClick={() =>clicou}>7</button>
+                    <button className="botao" onClick={() =>clicou}>8</button>
+                    <button className="botao" onClick={() =>clicou}>9</button>
                 </div>
                 <div>
-                    <Button class="botao" label="0" />
+                    <button className="botao" onClick={() =>clicou}>0</button>
                 </div>
             </div>
             <div>
-                    <Button class="botao branco" label="BRANCO" />
-                    <Button class="botao corrige" label="CORRIGE" />
-                    <Button class="botao confirma" label="CONFIRMA" />
+                    <button class="botao branco" onClick={() =>branco}>BRANCO</button>
+                    <button class="botao corrige" onClick={() =>corrige}>CORRIGE</button> 
+                    <button class="botao confirma" onClick={() => confirma()}>CONFIRMA</button>  
             </div>
         </div>
         

@@ -1,11 +1,11 @@
 import React from 'react'
 
-import Urna from './Components/Urna'
+import Tela from './Components/Tela'
 
 export default function App() {
     return(
         <div>
-           <Urna />
+           <Tela />;
         </div>
     )
 }

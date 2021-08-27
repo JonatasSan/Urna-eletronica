@@ -4,17 +4,15 @@ import { React, useState, useEffect } from "react";
 import '../Styles/Tela.css'
 import { dados } from "./dados";
 
+import Teclado from "./Teclado";
 
 export default function Tela() {  
-   
-    const [seuVoto, setseuVoto] = useState("");
-    const [cargo, setCargo] = useState("");
-    const [descricao, setDescricao] = useState("");
-    const [aviso, setAviso] = useState("");
-    const [lateral, setLateral] = useState("");
-    const [numeros, setNumeros] = useState("");
-    
-    const [etapaAtual, setetapaAtual] = useState(0);
+
+    function digito() {
+        return {__html: ''};
+      
+    }
+    const [etapaAtual, setEtapaAtual] = useState(0);
     const [registro, setRegistro] = useState({});    
 
     const [candidato, setCandidato] = useState({});
@@ -23,7 +21,11 @@ export default function Tela() {
     function Numero() {
         const inputNumeros = [];
         for (let i = 0; i < registro.numeros; i++) {
-            inputNumeros.push(<input key={i} type="number" maxLenght="1" className="nume"/> );                     
+            if (i == 0){
+                inputNumeros.push(<div dangerouslySetInnerHTML={digito()} key={i} type="number" maxLenght="1" className="nume pisca"></div> );
+            }else {
+                inputNumeros.push(<div key={i} type="number" maxLenght="1" className="nume"></div> );
+            }                   
         }                
         
         return inputNumeros;
@@ -42,7 +44,8 @@ export default function Tela() {
     }, [numCandidato]);
 
     return(
-        <div className="tela">
+        <div className="principal">
+            <div className="tela">
             <div className="voto">
                 <div className="esquerda">
                     <div className="d-1">
@@ -52,7 +55,7 @@ export default function Tela() {
                         <span>{registro.titulo}</span>
                     </div>
                     <div className="d-3">
-                        <Numero />                      
+                        <Numero></Numero>                   
                     </div>
                     <div className="d-4">
                         <span>Nome: </span> <br />
@@ -62,13 +65,13 @@ export default function Tela() {
                 </div>
                 <div className="direita">
                     <div className="avatar">
-                        <img src="" alt="" />
+                        <img src="https://avatars.githubusercontent.com/u/83596473?v=4" alt="" />
                         Prefeito
                     </div>
-                    {candidato && <div className="avatar v">
-                        <img src={candidato.fotos} alt="" />
+                    <div className="avatar v">
+                        <img src="https://avatars.githubusercontent.com/u/83596473?v=4"alt="" />
                         Vice-Prefeito
-                    </div>}
+                    </div>
                 </div>
             </div>
             <div className="instrucao">
@@ -77,7 +80,8 @@ export default function Tela() {
                 <span>CORRIGE para REINICIAR este voto.</span><br />
             </div>
 
-            <button onClick={() => setetapaAtual(1)}>teste</button>
+            </div>
+            <Teclado setEtapaAtual={setEtapaAtual} />
             <button onClick={() => setNumCandidato(30100)}>teste1</button>
             <button onClick={() => setNumCandidato(45600)}>teste2</button>
             <h1>{candidato && candidato.nome}</h1>

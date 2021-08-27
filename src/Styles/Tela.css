@@ -3,7 +3,12 @@
     50% {opacity: 1;}
     100% {opacity: 0.2}
 }
-
+.principal{
+    background-color: #dbd5c6;
+    display: flex ;
+    padding: 30px;
+    justify-content: center;
+}
 .tela{
     background: linear-gradient(to right, #E8E8E8, #C1C1C1);
     width: 500px;
@@ -24,12 +29,14 @@
 }
 .avatar{
     border: 1px solid #555;
+    border-radius: 5px;
     background-color: white; 
     text-align: center;
     font-size: 14px;
 }
 .avatar img{
     width: 100%;
+    border-radius: 5px;
 }
 .avatar.v{
     width: 80%;
