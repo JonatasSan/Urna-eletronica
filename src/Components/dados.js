@@ -7,21 +7,19 @@ export const dados = [
                 numero: 30100,
                 nome: 'Jonatas Santos',
                 partido: 'PDEV',
-                fotos: [
-                    {url: 'https://avatars.githubusercontent.com/u/83596473?v=4',
-                     legenda: 'Vereador'
-                    }
-                ]
+                foto: 'https://avatars.githubusercontent.com/u/83596473?v=4',
+                legenda: 'Vereador'
+                
+                
             },
             {
                 numero: 45600,
                 nome: 'Rogerio Manella',
                 partido: 'PSDB',
-                fotos: [
-                    {url: 'https://avatars.githubusercontent.com/u/25174?v=4',
-                     legenda: 'Vereador'
-                    }
-                ]
+                foto: 'https://avatars.githubusercontent.com/u/25174?v=4',
+                legenda: 'Vereador'
+                    
+                
             },
         ]
     },
@@ -33,23 +31,23 @@ export const dados = [
                 numero: 30,
                 nome: 'LEONARDO TELLES',
                 partido: 'PDEV',
-                fotos: [
-                    {url: 'https://avatars.githubusercontent.com/u/28353500?v=4',
-                     legenda: 'Prefeito',
-                     url: 'https://avatars.githubusercontent.com/u/30236552?v=4',
-                     legenda: 'Vice-Prefeito',
-                    }
-                ]
+                foto: 'https://avatars.githubusercontent.com/u/28353500?v=4',
+                legenda: 'Prefeito',
+                foto2: 'https://avatars.githubusercontent.com/u/30236552?v=4',
+                legenda2: 'Vice-Prefeito',
+                    
+                
             },
             {
                 numero: 45,
                 nome: 'Jefferson Nutella',
                 partido: 'PSDB',
-                fotos: [
-                    {url: 'https://avatars.githubusercontent.com/u/25174?v=4',
-                     legenda: 'Vereador'
-                    }
-                ]
+                foto: 'https://avatars.githubusercontent.com/u/25174?v=4',
+                legenda: 'Prefeito',
+                foto2: '',
+                legenda: ''
+                    
+                
             },
         ]
     }

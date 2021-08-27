@@ -1,6 +1,7 @@
 .teclado{
     background-color: #292525;
     margin-left: 30px;
+    border-radius: 5px;
 }
 .num{
     margin: 30px;
