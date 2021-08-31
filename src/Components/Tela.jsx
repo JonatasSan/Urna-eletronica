@@ -10,6 +10,7 @@ export default function Tela() {
 
     function digito() {
         return {__html: ''};
+        // dangerouslySetInnerHTML={digito()}
       
     }
     const [etapaAtual, setEtapaAtual] = useState(0);
@@ -24,12 +25,8 @@ export default function Tela() {
     function Numero() {
         const inputNumeros = [];
         for (let i = 0; i < registro.numeros; i++) {
-            if (i == 0){
-                inputNumeros.push(<div dangerouslySetInnerHTML={digito()} key={i} type="number" className="nume pisca"></div> );
-            }else {
-                inputNumeros.push(<div key={i} type="number" className="nume"></div> );
-            }                   
-        }                
+            inputNumeros.push(<div key={i} type="number" className="nume">{numCandidato}</div> );
+        }         
         return inputNumeros;
     }
 
