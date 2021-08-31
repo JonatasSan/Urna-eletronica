@@ -17,16 +17,17 @@ export default function Tela() {
     const [registro, setRegistro] = useState({});    
 
     const [candidato, setCandidato] = useState({});
-    const [numCandidato, setNumCandidato] = useState(); {
-        console.log(numCandidato)
-    }
-
+    const [numCandidato, setNumCandidato] = useState("");    
     
     function Numero() {
         const inputNumeros = [];
-        for (let i = 0; i < registro.numeros; i++) {
-            inputNumeros.push(<div key={i} type="number" className="nume">{numCandidato}</div> );
-        }         
+        
+        const myArr = numCandidato.split(";");
+        
+        for (let i = 0; i < registro.numeros; i++) {                                   
+            inputNumeros.push(<input key={i} type="number" className="nume" value={myArr[i]} /> );
+        }                
+
         return inputNumeros;
     }
 
@@ -34,12 +35,15 @@ export default function Tela() {
         setRegistro(dados[etapaAtual]);
     }, [etapaAtual]);
 
-    useEffect(() => {        
+    useEffect(() => {          
+        
+        const numText = numCandidato.replaceAll(";", "");
+    
         const candidatos = registro.candidatos;
-        if (candidatos) {
-            const candidato = candidatos.filter(candidato => candidato.numero === numCandidato);
+        if (candidatos) {                     
+            const candidato = candidatos.filter(candidato => candidato.numero == numText);
             setCandidato(candidato[0]);       
-        }        
+        }  
     }, [numCandidato]);
 
     return(
@@ -47,29 +51,29 @@ export default function Tela() {
             <div className="tela">
                 <div className="voto">
                     <div className="esquerda">
-                        <div className="e-1">
+                        {/* <div className="e-1">
                             <span>Seu voto para:</span>
-                        </div>
+                        </div> */}
                         <div className="e-2">
                             <span>{registro.titulo}</span>
                         </div>
                         <div className="e-3">
-                            <Numero/>             
+                            <Numero/>                            
                         </div>
                         <div className="e-4">
-                            <span>Nome: {candidato && candidato.nome}</span> <br />
-                            <span>Partido: {candidato && candidato.partido} </span> <br />
-                            {/* <span>Vice-Prefeito: </span> <br /> */}
+                            <span>{candidato && candidato.nome}</span> <br />
+                            <span>{candidato && candidato.partido} </span> <br />
+                            <span> {candidato && candidato.nomeVice}</span> <br />
                         </div>
                     </div>
                     <div className="direita">
                         <div className="avatar">
                             <img src={candidato && candidato.foto} alt="" />
+                            {candidato && candidato.legenda}
                         </div>
-                        {/* <div className="avatar v">
-                            <img src=""alt="" />
-                            Vice-Prefeito
-                        </div> */}
+                        <div className="avatar v">
+                            <img src={candidato && candidato.foto2}alt="" />
+                        </div>
                     </div>
                 </div>
                 <div className="linha"/>

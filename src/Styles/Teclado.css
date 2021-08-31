@@ -18,6 +18,12 @@
     cursor: pointer;
     border-radius: 5px;
 }
+.botao:hover{
+    background-color: rgba(0, 0, 0, 0.527);
+}
+.botao:active{
+    background-color: rgba(26, 25, 25, 0.733);
+}
 .botao.confirma{
     height: 50px;
     width: 90px;

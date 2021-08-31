@@ -2,10 +2,28 @@ import React from 'react'
 
 import '../Styles/Teclado.css'
 
-export default props => {
+const teste = [];
+var teste1 = "";
 
+export default props => {
+    
     function clicou(n) {
-        props.setNumCandidato(n)
+        
+
+        teste.push(n);
+        
+
+        teste1 = "";
+        for (let i = 0; i < teste.length; i++) {
+            const element = teste[i];
+            teste1 += element + ";";
+        }
+
+        teste1 = teste1.substring(0, teste1.length - 1);
+        // alert(teste1);
+
+        props.setNumCandidato(teste1);
+
     }
     function branco() {
     }
