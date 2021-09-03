@@ -51,14 +51,14 @@ export default function Tela() {
             <div className="tela">
                 <div className="voto">
                     <div className="esquerda">
-                        {/* <div className="e-1">
-                            <span>Seu voto para:</span>
-                        </div> */}
+                        <div className="e-1">
+                            <span>SEU VOTO PARA:</span>
+                        </div>
                         <div className="e-2">
                             <span>{registro.titulo}</span>
                         </div>
                         <div className="e-3">
-                            <Numero/>                            
+                            Numero:<Numero/>                            
                         </div>
                         <div className="e-4">
                             <span>{candidato && candidato.nome}</span> <br />
@@ -69,19 +69,20 @@ export default function Tela() {
                     <div className="direita">
                         <div className="avatar">
                             <img src={candidato && candidato.foto} alt="" />
-                            {candidato && candidato.legenda}
+                            <span>{candidato && candidato.legenda}</span>
                         </div>
                         <div className="avatar v">
                             <img src={candidato && candidato.foto2}alt="" />
+                            <span>{candidato && candidato.legenda2}</span>
                         </div>
                     </div>
                 </div>
                 <div className="linha"/>
                 <div className="instrucao">
                     <span>Aperte a tecla:</span><br />
-                    <span>BRANCO para VOTAR EM BRANCO</span><br />
-                    <span>LARANJA para CORRIGIR</span><br />
                     <span>VERDE para CONFIRMAR</span><br/>
+                    <span>LARANJA para CORRIGIR</span><br />
+                    <span>BRANCO para votar em BRANCO</span><br />
                 </div>
             </div>
             <Teclado setEtapaAtual={setEtapaAtual} setNumCandidato={setNumCandidato} />

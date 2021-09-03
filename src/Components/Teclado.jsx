@@ -20,7 +20,6 @@ export default props => {
         }
 
         teste1 = teste1.substring(0, teste1.length - 1);
-        // alert(teste1);
 
         props.setNumCandidato(teste1);
 
