@@ -7,29 +7,41 @@ var teste1 = "";
 
 export default props => {
     
-    function clicou(n) {
+    function cleanFields() {
         
-
-        teste.push(n);
-        
-
-        teste1 = "";
-        for (let i = 0; i < teste.length; i++) {
-            const element = teste[i];
-            teste1 += element + ";";
+        while (teste.length) {
+            teste.pop()
         }
 
-        teste1 = teste1.substring(0, teste1.length - 1);
+        props.setNumCandidato('')
+    }
 
-        props.setNumCandidato(teste1);
+    function clicou(n) {
+        const maxSize = props.etapaAtual == 0 ? 5 : 2
+
+        teste.push(n);
+        teste1 = "";
+        
+        if (teste.length <= maxSize) {
+            for (let i = 0; i < teste.length; i++) {
+                const element = teste[i];
+                teste1 += element + ";";
+            }
+            
+            teste1 = teste1.substring(0, teste1.length - 1);    
+            props.setNumCandidato(teste1);
+        }
 
     }
+
     function branco() {
     }
     function confirma() {
         props.setEtapaAtual(1)
+        cleanFields()
     }
     function corrige() {
+        cleanFields()
     }
 
     return(

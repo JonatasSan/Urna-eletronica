@@ -11,7 +11,6 @@ export default function Tela() {
     function digito() {
         return {__html: ''};
         // dangerouslySetInnerHTML={digito()}
-      
     }
     const [etapaAtual, setEtapaAtual] = useState(0);
     const [registro, setRegistro] = useState({});    
@@ -85,7 +84,10 @@ export default function Tela() {
                     <span>BRANCO para votar em BRANCO</span><br />
                 </div>
             </div>
-            <Teclado setEtapaAtual={setEtapaAtual} setNumCandidato={setNumCandidato} />
+            <Teclado
+                etapaAtual={etapaAtual}
+                setEtapaAtual={setEtapaAtual}
+                setNumCandidato={setNumCandidato} />
             {/* <button onClick={() => setNumCandidato(30100)}>teste1</button>
             <button onClick={() => setNumCandidato(45600)}>teste2</button> */}
             <h1></h1>
