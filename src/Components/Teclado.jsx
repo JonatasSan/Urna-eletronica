@@ -2,49 +2,45 @@ import React from 'react'
 
 import '../Styles/Teclado.css'
 
-const teste = [];
-var teste1 = "";
+const arrayNumCandidato = [];
+var stringNumCandidato = "";
 
-const Teclado = (props) => {
-    
-    function cleanFields() {
-        
-        while (teste.length) {
-            teste.pop()
+const Teclado = (props) => {   
+    function cleanFields() {       
+        while (arrayNumCandidato.length) {
+            arrayNumCandidato.pop()
         }
-
         props.setNumCandidato('')
     }
-
     function clicou(n) {
         const maxSize = props.etapaAtual === 0 ? 5 : 2
-
-        teste.push(n);
-        teste1 = "";
-        
-        if (teste.length <= maxSize) {
-            for (let i = 0; i < teste.length; i++) {
-                const element = teste[i];
-                teste1 += element + ";";
+        arrayNumCandidato.push(n);
+        stringNumCandidato = "";       
+        if (arrayNumCandidato.length <= maxSize) {
+            for (let i = 0; i < arrayNumCandidato.length; i++) {
+                const element = arrayNumCandidato[i];
+                stringNumCandidato += element + ";";
             }
-            
-            teste1 = teste1.substring(0, teste1.length - 1);    
-            props.setNumCandidato(teste1);
+            stringNumCandidato = stringNumCandidato.substring(0, stringNumCandidato.length - 1);    
+            props.setNumCandidato(stringNumCandidato);
         }
-
-    }
-
-    function branco() {
     }
     function confirma() {
-        let mudarEtapa = props.etapaAtual + 1
-        props.setEtapaAtual(mudarEtapa)
-        cleanFields()
+        if (props.etapaAtual < 2){
+            let mudarEtapa = props.etapaAtual + 1
+            props.setEtapaAtual(mudarEtapa)
+            cleanFields()
+        }else if (props.etapaAtual === 2){
+            props.setEtapaAtual(0)
+            cleanFields()
+        }
     }
     function corrige() {
         cleanFields()
     }
+    function branco() {
 
+    }
     return(
         <div className="teclado">
             <div className="num">

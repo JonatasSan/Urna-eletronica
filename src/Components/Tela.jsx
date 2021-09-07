@@ -33,7 +33,7 @@ export default function Tela() {
     
         const candidatos = registro.candidatos;
         if (candidatos) {                     
-            const candidato = candidatos.filter(candidato => candidato.numero == numText);
+            const candidato = candidatos.filter(candidato => candidato.numero === numText);
             setCandidato(candidato[0]);       
         }  
     }, [numCandidato]);
