@@ -5,7 +5,7 @@ import '../Styles/Teclado.css'
 const teste = [];
 var teste1 = "";
 
-export default props => {
+const Teclado = (props) => {
     
     function cleanFields() {
         
@@ -17,7 +17,7 @@ export default props => {
     }
 
     function clicou(n) {
-        const maxSize = props.etapaAtual == 0 ? 5 : 2
+        const maxSize = props.etapaAtual === 0 ? 5 : 2
 
         teste.push(n);
         teste1 = "";
@@ -37,7 +37,8 @@ export default props => {
     function branco() {
     }
     function confirma() {
-        props.setEtapaAtual(1)
+        let mudarEtapa = props.etapaAtual + 1
+        props.setEtapaAtual(mudarEtapa)
         cleanFields()
     }
     function corrige() {
@@ -75,3 +76,4 @@ export default props => {
         
     )
 }
+export default Teclado

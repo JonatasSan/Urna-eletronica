@@ -8,13 +8,8 @@ import Teclado from "./Teclado";
 
 export default function Tela() {  
 
-    function digito() {
-        return {__html: ''};
-        // dangerouslySetInnerHTML={digito()}
-    }
     const [etapaAtual, setEtapaAtual] = useState(0);
     const [registro, setRegistro] = useState({});    
-
     const [candidato, setCandidato] = useState({});
     const [numCandidato, setNumCandidato] = useState("");    
     
@@ -24,12 +19,10 @@ export default function Tela() {
         const myArr = numCandidato.split(";");
         
         for (let i = 0; i < registro.numeros; i++) {                                   
-            inputNumeros.push(<input key={i} type="number" className="nume" value={myArr[i]} /> );
+            inputNumeros.push(<input key={i} type="number" className="numeros" defaultValue={myArr[i]} />);
         }                
-
         return inputNumeros;
     }
-
     useEffect(() => {
         setRegistro(dados[etapaAtual]);
     }, [etapaAtual]);
@@ -51,13 +44,14 @@ export default function Tela() {
                 <div className="voto">
                     <div className="esquerda">
                         <div className="e-1">
-                            <span>SEU VOTO PARA:</span>
+                            <span>{registro.legenda}</span>
                         </div>
                         <div className="e-2">
                             <span>{registro.titulo}</span>
                         </div>
+                        <span className="fim">{registro.finaliza}</span>
                         <div className="e-3">
-                            Numero:<Numero/>                            
+                            <Numero/>                            
                         </div>
                         <div className="e-4">
                             <span>{candidato && candidato.nome}</span> <br />
@@ -76,21 +70,21 @@ export default function Tela() {
                         </div>
                     </div>
                 </div>
-                <div className="linha"/>
+                {etapaAtual!==2 && 
                 <div className="instrucao">
+                    <div className="linha"/>
                     <span>Aperte a tecla:</span><br />
                     <span>VERDE para CONFIRMAR</span><br/>
                     <span>LARANJA para CORRIGIR</span><br />
                     <span>BRANCO para votar em BRANCO</span><br />
                 </div>
+                }
             </div>
             <Teclado
                 etapaAtual={etapaAtual}
                 setEtapaAtual={setEtapaAtual}
-                setNumCandidato={setNumCandidato} />
-            {/* <button onClick={() => setNumCandidato(30100)}>teste1</button>
-            <button onClick={() => setNumCandidato(45600)}>teste2</button> */}
-            <h1></h1>
+                setNumCandidato={setNumCandidato} 
+            />
         </div>
     )
 }

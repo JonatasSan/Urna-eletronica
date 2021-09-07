@@ -1,9 +1,8 @@
-export const dados = [
-    {
+export const dados = [{
         titulo: 'VEREADOR:',
         numeros: 5,
-        candidatos: [
-            {
+        legenda: 'SEU VOTO PARA:',
+        candidatos: [{
                 numero: 30100,
                 nome: 'Nome: JONATAS SANTOS',
                 partido: 'Partido: PDEV',
@@ -29,14 +28,14 @@ export const dados = [
     {
         titulo: 'PREFEITO:',
         numeros: 2,
-        candidatos: [
-            {
+        legenda: 'SEU VOTO PARA:',
+        candidatos: [{
                 numero: 30,
                 nome: 'Nome: LEONARDO TELLES',
                 partido: 'Partido: PDEV',
                 foto: 'https://avatars.githubusercontent.com/u/28353500?v=4',
                 legenda: 'Prefeito',
-                nomeVice:' Vice-Prefeito: JEAN TUX' ,
+                nomeVice: ' Vice-Prefeito: JEAN TUX',
                 foto2: 'https://avatars.githubusercontent.com/u/30236552?v=4',
                 legenda2: 'Vice-Prefeito',
             },
@@ -49,9 +48,12 @@ export const dados = [
                 nomeVice: 'Vice-Prfeito: MARIA JUANA',
                 foto2: 'https://avatars.githubusercontent.com/u/1681405?v=4',
                 legenda2: 'Vice-Prefeito'
-                    
-                
+
+
             },
         ]
+    },
+    {
+        finaliza: 'FIM'
     }
 ]
